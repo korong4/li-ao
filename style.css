@@ -1,0 +1,15 @@
+.cards{
+    display: flex; /* o display serve para definir que posiçao a div vai ficar*/
+    justify-content: center;  /* define como vai ficar alinhado os items */
+    align-items: center;    /* centralizar os items*/
+    height: 1000px; /* define o a altura*/
+}
+p{
+    display: flex;
+    justify-content: center;
+    align-items: center;     ;
+}
+
+body{
+    background-color: rgb(95, 95, 95);
+}
