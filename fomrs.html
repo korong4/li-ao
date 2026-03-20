@@ -9,22 +9,26 @@
     <link rel="stylesheet" href="style.css"> <!--- a tag <link> serve para estabelecer conexao entre os documentos, que nesse caso esta pegando da tag <href> . A tag <rel> serve para declarar que o arquivo eh uma folha de estilo-->
 </head>
 <body> <!-- Eh o corpo do HTML, contendo elementos visuais da pagina-->
+
     <header>
-        <nav>
-            <ul>
-                <li> <a href="index.html"> Home </a></li>
-                <li> <a href="fomrs.html"> Form </a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+            <li> <a href="index.html"> Home </a></li>
+            <li> <a href="fomrs.html"> Forsm </a></li>
+        </ul>
+      </nav>
     </header>
-    <div class="cards">  
-        <!-- atributos: img,link-->
-        <img src="download.png" alt="logo do ifsp" width="200">
-        <br> </br> <!--- pula linha -->
-        <a href="https://moodle.slt.ifsp.edu.br/my/" target="_blank"> <!--- a tag <a> serve para colocar link -->
-            <button> clica aqui para entrar no moodle</button> <!--- a tag <button> criar um botao interativo-->
-        </a>
+
+    <div class="formulario">
+            <form>
+                <input type="text" placeholder="Nome da Raça"> <br>
+                <input type="text" placeholder="Link da imagem"> 
+                <p>Ideal para Apartamento?</p>
+                <input type="radio" id="verdadeiro" name="apartamento" value="V">
+                <label for="verdadeiro">SIM</label><br>
+                <input type="radio" id="falso" name="apartamento" value="F">
+                <label for="falso">NÃO</label><br>
+            </form>
     </div>
-    <p> licao de desenvolvimento Web</p> <!-- tag de blocos de textos-->
 </body>
 </html>
