@@ -1,0 +1,34 @@
+.cards{
+    display: flex; /* o display serve para definir que posiçao a div vai ficar*/
+    justify-content: center;  /* define como vai ficar alinhado os items */
+    align-items: center;    /* centralizar os items*/
+    height: 1000px; /* define o a altura*/
+}
+.cards p {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+body{
+    background-color: rgb(95, 95, 95);
+    margin: 0px;
+}
+
+.formulario{
+    display: flex; 
+    justify-content: center;  
+    align-items: center;    
+    height: 500px;
+}
+
+header{
+    background-color: #210057;
+    padding: 20px;
+    margin: 0px;
+}
+
+a{
+    color: white;
+}
+
