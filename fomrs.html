@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--- A tag "name" serve para indentificar os elementos enviados de formularios. A tag "content" define a escala incial-->
     <title> Catalogo </title> <!--- titulo da pagina-->
     <link rel="stylesheet" href="style.css"> <!--- a tag <link> serve para estabelecer conexao entre os documentos, que nesse caso esta pegando da tag <href> . A tag <rel> serve para declarar que o arquivo eh uma folha de estilo-->
+    <script src="script.js"></script>
 </head>
 <body> <!-- Eh o corpo do HTML, contendo elementos visuais da pagina-->
 
@@ -23,12 +24,16 @@
             <form>
                 <input type="text" placeholder="Nome da Raça"> <br>
                 <input type="text" placeholder="Link da imagem"> 
-                <p>Ideal para Apartamento?</p>
+                <p id="teste">Ideal para Apartamento?</p>
                 <input type="radio" id="verdadeiro" name="apartamento" value="V">
                 <label for="verdadeiro">SIM</label><br>
                 <input type="radio" id="falso" name="apartamento" value="F">
                 <label for="falso">NÃO</label><br>
             </form>
+    </div>
+
+    <div id="botao">
+      <button onclick="alterarFundo()" type="button">Mudar Cor</button>
     </div>
 </body>
 </html>
