@@ -27,6 +27,7 @@ body{
 }
 
 header{
+    text-align: left;
     background-color: #210057;
     padding: 20px;
     margin: 0px;
@@ -36,3 +37,12 @@ a{
     color: white;
 }
 
+#botao{
+    margin-left: auto;
+    border: none;
+}
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
