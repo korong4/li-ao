@@ -26,3 +26,12 @@ for (let i=0;i<n;i++){
     }
     console.log(linha);
 }
+
+const formulario = document.querySelector(".formulario");
+
+formulario.addEventListener('submit',function(evento){
+    evento.preventDefalut();
+    const novoTitulo = documento.getElementsById('raca').value;
+    const novoImagem = documento.getElementsById('imagem').value;
+    const novoApp = documento.getElementsById('app').value;
+})
