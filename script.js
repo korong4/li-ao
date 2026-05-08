@@ -10,6 +10,19 @@ function alterarFundo(){
     } 
 }
 
+function criarCard(obj){
+    const coletion = document.getElementById('colecao');
+
+    const card = document.createElement('div');
+
+    card.innerHTML = `
+        <h2>${obj.titulo}</h2>
+        <img src="${obj.imagem}" width='200'>
+        <p>${obj.desc}</p>
+    `;
+    coletion.appendChild(card);
+}
+
 let n = 25;
 for (let i=0;i<n;i++){
     let linha = "";
@@ -27,18 +40,22 @@ for (let i=0;i<n;i++){
     console.log(linha);
 }
 
-const formulario = document.querySelector(".formulario"); /* essa linha cria uma variavel constante (não pode mudar ao longo do codigo), que esta sendo atribuido o  
-  priemeiro elemento com class 'formulario' dentro do codigo HTML  */
+const formulario = document.querySelector('.formulario'); /* essa linha cria uma variavel constante (não pode mudar ao longo do codigo), que esta sendo atribuido o  
+priemeiro elemento com class 'formulario' dentro do codigo HTML  */
+console.log(formulario);
 
 formulario.addEventListener('submit',function(evento){   // adiciona um evento ao formulário que dispara quando ele é enviado
-    evento.preventDefalut(); // impede o comportamento padrão 
-    const novoTitulo = documento.getElementsById('raca').value; // pega o elemento do HTML com ID "raca"
-    const novoImagem = documento.getElementsById('imagem').value; // pega o elemento do HTML com ID "imagem"
-    const novoApp = documento.getElementsById('app').value; // pega o elemento do HTML com ID "app"
+    evento.preventDefault(); // impede o comportamento padrão 
+    const novoTitulo = document.getElementById('raca').value; // pega o elemento do HTML com ID "raca"
+    const novoImagem = document.getElementById('imagem').value; // pega o elemento do HTML com ID "imagem"
+    const novoDesc = document.getElementById('desc').value;
+    const novoApp = document.getElementById('app').checked; // pega o elemento do HTML com ID "app"
 
     const novo = { // essa estrutura está criando um obejto com 3 atributos
-        titilo : novoTitulo,
+        titulo : novoTitulo,
         imagem : novoImagem,
-        app : novoApp
+        app : novoApp,
+        desc : novoDesc
     };
+    criarCard(novo);
 })
