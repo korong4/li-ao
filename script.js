@@ -1,16 +1,16 @@
-function alterarFundo(){
+function alterarFundo() {
     let cor = document.body.style.backgroundColor;
-    if (cor ===  "black"){
+
+    if (cor === "black") {
         document.body.style.backgroundColor = "white";
         document.querySelector('p').style.color = "black";
     } 
-    else{
+    else {
         document.body.style.backgroundColor = "black";
         document.querySelector('p').style.color = "white";
-    } 
+    }
 }
-
-function criarCard(obj){
+function criarCard(obj) {
     const coletion = document.getElementById('colecao');
 
     const card = document.createElement('div');
@@ -23,39 +23,68 @@ function criarCard(obj){
     coletion.appendChild(card);
 }
 
+/* =========================
+   LOCAL STORAGE
+========================= */
+
+// verifica se já existe algo salvo
+let galeria = JSON.parse(localStorage.getItem('galeria')) || [];
+// recria os cards salvos ao carregar a página
+galeria.forEach(item => {
+    criarCard(item);
+});
+
+/* =========================
+   EXEMPLO DO X
+========================= */
+
 let n = 25;
-for (let i=0;i<n;i++){
+
+for (let i = 0; i < n; i++) {
     let linha = "";
-    for (let j=0;j<n;j++){
-        if (i+j == n-1){
+    for (let j = 0; j < n; j++) {
+
+        if (i + j == n - 1) {
             linha += "X";
         }
-        else if (i == j){
+        else if (i == j) {
             linha += "X";
         }
-        else{
+        else {
             linha += " ";
         }
     }
+
     console.log(linha);
 }
 
-const formulario = document.querySelector('.formulario'); /* essa linha cria uma variavel constante (não pode mudar ao longo do codigo), que esta sendo atribuido o  
-priemeiro elemento com class 'formulario' dentro do codigo HTML  */
+/* =========================
+   FORMULÁRIO
+========================= */
+
+const formulario = document.querySelector('.formulario');
+
 console.log(formulario);
 
-formulario.addEventListener('submit',function(evento){   // adiciona um evento ao formulário que dispara quando ele é enviado
-    evento.preventDefault(); // impede o comportamento padrão 
-    const novoTitulo = document.getElementById('raca').value; // pega o elemento do HTML com ID "raca"
-    const novoImagem = document.getElementById('imagem').value; // pega o elemento do HTML com ID "imagem"
+formulario.addEventListener('submit', function(evento) {
+    evento.preventDefault();
+    const novoTitulo = document.getElementById('raca').value;
+    const novoImagem = document.getElementById('imagem').value;
     const novoDesc = document.getElementById('desc').value;
-    const novoApp = document.getElementById('app').checked; // pega o elemento do HTML com ID "app"
-
-    const novo = { // essa estrutura está criando um obejto com 3 atributos
-        titulo : novoTitulo,
-        imagem : novoImagem,
-        app : novoApp,
-        desc : novoDesc
+    const novoApp = document.getElementById('app').checked;
+    const novo = {
+        titulo: novoTitulo,
+        imagem: novoImagem,
+        app: novoApp,
+        desc: novoDesc
     };
+
+    // adiciona no array
+    galeria.push(novo);
+    // salva no LocalStorage
+    localStorage.setItem('galeria', JSON.stringify(galeria));
+    // cria o card na tela
     criarCard(novo);
-})
+    // limpa o formulário (opcional)
+    formulario.reset();
+});
